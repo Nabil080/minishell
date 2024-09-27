@@ -64,19 +64,18 @@ HEADERS =	includes/*.h
 
 .PHONY: all re clean fclean norm test leak
 
-all : 
-	${MAKE} -j ${NAME}
+all : ${NAME}
 
 re : fclean
 	${MAKE} all
 
 clean :
-	${foreach lib, ${LIBS}, ${MAKE} clean -C ${lib}}
+	-${foreach lib, ${LIBS}, ${MAKE} clean -C ${lib}}
 	rm -rf ${OBJS_DIR}
 	rm -f readline.supp
 
 fclean : clean
-	${foreach lib, ${LIBS}, ${MAKE} fclean -C ${lib}}
+	-${foreach lib, ${LIBS}, ${MAKE} fclean -C ${lib}}
 	rm -f ${NAME}
 
 norm :
