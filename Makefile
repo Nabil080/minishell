@@ -86,7 +86,7 @@ norm :
 
 ######################## COMPILATION ########################
 
-${NAME} : ${OBJS_DIR} ${OBJS}
+${NAME} : SUB_MODULE ${OBJS_DIR} ${OBJS}
 	${foreach lib, ${LIBS}, ${MAKE} -C ${lib}}
 	${CC} ${FLAGS} ${OBJS} ${foreach lib, ${LIBS},${lib}/${lib}.a} -o $@ ${LINKFLAGS}
 
@@ -103,6 +103,9 @@ ${OBJS_DIR} :
 
 ${OBJS_DIR}%.o : ${SRCS_DIR}%.c ${HEADERS}
 	${CC} ${FLAGS} ${CPPFLAGS} ${foreach include, ${INCLUDES},-I ${include}} -c $< -o $@
+
+SUB_MODULE :
+	git submodule update --init
 
 ######################## TEST ########################
 
