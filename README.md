@@ -9,9 +9,34 @@ A simple Shell Unix based on bash
 
 This project is about recreating our own minimalist shell, taking bash as reference. This is a group project I had the chance to work on with @corentin-ltc.
 ## Table of content
+
+- [Introduction](#introduction)
+- [How to Use It](#how-to-use-it)
+    - [Requirements](#requirements)
+    - [Installation](#installation)
+- [What It Does](#what-it-does)
+- [How It Works](#how-it-works)
+    - [Parsing](#parsing)
+        - [Checking the Input](#checking-the-input)
+        - [Variable Expansion](#variable-expansion)
+        - [Splitting the Command](#splitting-the-command)
+        - [Creating the Heredocs](#creating-the-heredocs)
+        - [Getting the Arguments](#getting-the-arguments)
+        - [Checking for Single Builtin](#checking-for-single-builtin)
+        - [Preparing the Redirections](#preparing-the-redirections)
+    - [Executing](#executing)
+        - [Creating the Pipes](#creating-the-pipes)
+        - [Creating the Child](#creating-the-child)
+        - [The Parent Process](#the-parent-process)
+        - [The Child Process](#the-child-process)
+- [Conclusion](#conclusion)
+- [Known Issues](#known-issues)
+- [Other](#other)
+
 ## How to use it
 
 Requirement :
+- Linux
 - GNU make
 - Clang to compile
 - Readline
