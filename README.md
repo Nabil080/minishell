@@ -6,7 +6,9 @@ A simple shell based on Bash
 <p align="center">
   <img src="demo.gif" alt="demo" />
 </p>
-This project is about recreating our own minimalist shell, taking bash as reference. This is a group project I had the chance to work on with [@corentin-ltc](https://github.com/corentin-ltc).
+This project is about recreating our own minimalist shell, taking bash as reference. This is a group project I had the chance to work on with
+
+[@corentin-ltc](github.com/corentin-ltc)
 
 ## Table of content
 
