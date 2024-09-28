@@ -7,6 +7,7 @@ A simple shell based on Bash
   <img src="demo.gif" alt="demo" />
 </p>
 This project is about recreating our own minimalist shell, taking bash as reference. This is a group project I had the chance to work on with [@corentin-ltc](https://github.com/corentin-ltc).
+
 ## Table of content
 
 - [Introduction](#introduction)
@@ -153,6 +154,7 @@ When quotes are opened, it is treated as a single argument and the tokens are ig
 - cmds[0]->args[1] = `["cat"]`
 - cmds[1]->args[2] = `["echo", "Nabil080 is > 'coding'."]`
 - cmds[1]->args[3] = `["tr", "a-z", "A-Z"]`
+
 As you can see, `"Nabil080 is > 'coding'."` is inside quotes and therefore treated as single argument. The redirection and the single quote are also ignored.
 
 *It's easier to do this now since we have to check for the command name (which is the first argument) to know whether we are dealing with a builtin or not.*
