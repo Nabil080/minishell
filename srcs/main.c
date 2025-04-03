@@ -12,6 +12,29 @@
 
 #include "minishell.h"
 
+void show_banner() {
+    printf(COLOR_CYAN"\n"
+        "  __  __ _       _     _          _ _ \n"
+        " |  \\/  (_)     (_)   | |        | | |\n"
+        " | \\  / |_ _ __  _ ___| |__   ___| | |\n"
+        " | |\\/| | | '_ \\| / __| '_ \\ / _ \\ | |\n"
+        " | |  | | | | | | \\__ \\ | | |  __/ | |\n"
+        " |_|  |_|_|_| |_|_|___/_| |_|\\___|_|_|\n"
+        "\n"
+        "Welcome to my minimalist shell !\n"
+        COLOR_RESET"Use commands, environment variables, redirections and pipes just like bash\n"
+        "\n");
+}
+
+void show_prompt(int exit_code) {
+    if (exit_code == 0)
+        printf(COLOR_GREEN "➜ " COLOR_RESET);      // Green arrow
+    else
+        printf(COLOR_RED "➜ " COLOR_RESET);        // Red arrow
+    
+    printf(COLOR_CYAN "minishell" COLOR_RESET " > ");
+}
+
 int	main(int argc, char **argv, char **env)
 {
 	t_data	data;
@@ -19,10 +42,12 @@ int	main(int argc, char **argv, char **env)
 	if (argc > 2 && argv)
 		exit_error("Too many arguments", NULL);
 	init_data(&data, env);
+    show_banner();
 	while (true)
 	{
 		reset_data(&data);
-		data.line = readline("minishell > ");
+        show_prompt(data.exit_code);
+		data.line = readline("");
 		if (!data.line)
 			exit_free(&data);
 		add_history(data.line);
