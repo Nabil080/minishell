@@ -2,9 +2,9 @@
 
 ## About
 
-**Minishell** is a minimalist Unix shell inspired by Bash. It allows users to execute commands, handle environment variables, and use common shell features such as pipes and redirections. 
+**Minishell** is a minimalist Unix shell inspired by Bash. It allows users to execute commands, handle environment variables, and use common shell features such as pipes and redirections.
 
-![Minishell Demo](./minishell.gif)
+![Minishell Demo](https://github.com/user-attachments/assets/b8118802-b416-45a9-af79-7c9ec9859471)
 
 This project was made in collaboration with [@corentin-ltc](https://github.com/corentin-ltc/)
 
